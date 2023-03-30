@@ -1,0 +1,50 @@
+.maindiv {
+  margin: 3% 3% 3% 3%;
+  background-color: #000000;
+  height: 12vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.detail-div {
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.name {
+  font-size: 160%;
+  color: #c69749;
+}
+.price {
+  font-size: 160%;
+  color: #c69749;
+}
+.vegNonVeg {
+  margin-top: 3%;
+  width: 8%;
+}
+.button-div {
+  padding: 2%;
+  font-size: 150%;
+}
+.button {
+  position: relative;
+  left: 65%;
+  font-size: 200%;
+  width: 10%;
+  height: 130%;
+  background-color: #c69749;
+  color: white;
+  border: 0;
+  margin: 0;
+}
+.bleft {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.bright {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
