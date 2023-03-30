@@ -45,4 +45,3 @@ export default function Tray({ name, price, veg }) {
     </div>
   );
 }
-// https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thebossykitchen.com%2Fauthentic-traditional-turkish-coffee%2F&psig=AOvVaw0bgskuMQVwuonf__YkTkK0&ust=1680271039341000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMCEncXng_4CFQAAAAAdAAAAABAE
