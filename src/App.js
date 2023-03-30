@@ -2,7 +2,7 @@ import "./App.css";
 function App() {
   return (
     <div>
-      <p>edited by rohan garg</p>
+      <p>rohan pareek is your dad</p>
     </div>
   );
 }
