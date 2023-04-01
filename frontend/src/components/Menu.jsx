@@ -19,6 +19,7 @@ function Menu({
         name={obj.name}
         price={obj.price}
         setAmount={setAmount}
+        veg={obj.veg}
       />
     );
   }

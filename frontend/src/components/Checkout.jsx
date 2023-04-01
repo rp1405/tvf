@@ -80,6 +80,7 @@ function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
             if (countArr[ind] > 0) {
               return (
                 <ListItem
+                  key={item._id}
                   itemName={foodsArr[ind].name}
                   itemCount={countArr[ind]}
                   itemPrice={foodsArr[ind].price}

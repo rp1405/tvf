@@ -13,6 +13,10 @@ const foodSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  veg: {
+    type: Boolean,
+    default: true,
+  },
 });
 
 module.exports = mongoose.model("Food", foodSchema);

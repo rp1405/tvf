@@ -8,10 +8,10 @@ export default function Tray({
   ind,
   countArr,
   setCountArr,
+  veg,
 }) {
   const [count, setCount] = useState(countArr[ind]);
   var vegNonveg = "";
-  var veg = 1;
   if (veg) {
     vegNonveg = "../../assets/veg-icon.svg";
   } else {
