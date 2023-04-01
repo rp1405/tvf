@@ -5,6 +5,8 @@ import Header from "./components/header.jsx";
 import { useState, useEffect } from "react";
 import { getFoodsData } from "./api/foodoptions";
 function App() {
+  // git comment
+
   const [isCheck, setIsCheck] = useState(0);
   const [countArr, setCountArr] = useState([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
