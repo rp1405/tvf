@@ -73,13 +73,13 @@ const paymentVerification = async (req, res) => {
             color: #88B04B;
             font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
             font-weight: 900;
-            font-size: 40px;
+            font-size: 70px;
             margin-bottom: 10px;
           }
           p {
             color: #404F5E;
             font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-            font-size:20px;
+            font-size:50px;
             margin: 0;
           }
         i {
@@ -90,11 +90,13 @@ const paymentVerification = async (req, res) => {
         }
         .card {
           background: white;
+          width: 70%;
           padding: 60px;
           border-radius: 4px;
           box-shadow: 0 2px 3px #C8D0D8;
           display: inline-block;
           margin: 0 auto;
+          margin-top:55%;
         }
       </style>
       <body>
