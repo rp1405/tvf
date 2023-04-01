@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300;500&display=swap");
+h1 {
+  margin: 0;
+}
+.footMainDiv {
+  background-color: #5c3d2e;
+  height: 260px;
+  padding-left: 7%;
+  padding-top: 20px;
+  position: fixed;
+  width: 93vw;
+  bottom: 0;
+  color: ivory;
+  display: flex;
+  flex-direction: row;
+  font-family: "Dosis";
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  margin: 0;
+}
+.totalAmount {
+  font-size: 35px;
+  width: 100%;
+}
+.amount {
+  font-size: 50px;
+  margin-left: 10%;
+}
+.proceedButton {
+  font-size: 10px;
+  background-color: #1a120b;
+  color: ivory;
+  font-family: "Times New Roman";
+  font-size: 50px;
+  font-weight: bolder;
+  border: 0;
+  width: 340px;
+  height: 180px;
+  border-radius: 30px;
+  margin-top: 50px;
+  margin-left: 30%;
+}

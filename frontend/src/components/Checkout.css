@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
+.summOutDiv {
+  font-family: "Dosis";
+  font-size: 25px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.summaryDiv {
+  background-color: #5c3d2e;
+  color: ivory;
+  border-radius: 50px;
+  width: 80%;
+  margin-top: 200px;
+}
+.summary {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+hr {
+  margin-top: 10px;
+  width: 70%;
+}
+.back-button {
+  position: absolute;
+  left: 5%;
+  top: 250px;
+  background-image: url("../../public/assets/back-button2.svg");
+  background-repeat: no-repeat;
+  border: 0;
+  width: 80px;
+  height: 80px;
+  background-size: cover;
+  background-color: antiquewhite;
+  border-radius: 100px;
+}

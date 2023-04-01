@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
+.maindiv {
+  font-family: "Times New Roman";
+  margin: 3% 3% 3% 3%;
+  background-color: #dbcbbd;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 30px;
+}
+.detail-div {
+  padding-left: 3%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+.name {
+  font-size: 160%;
+  color: #3c2a21;
+  margin-left: 4%;
+  width: 30%;
+  padding-top: 30px;
+  /* position: relative; */
+  /* right: 20%; */
+}
+.price {
+  font-size: 160%;
+  color: #3c2a21;
+  padding-top: 30px;
+  margin-left: 40%;
+}
+.image {
+  border-radius: 5px;
+}
+.vegNonVeg {
+  margin-top: 3%;
+  width: 8%;
+}
+.button-div {
+  padding: 2%;
+  font-size: 150%;
+}
+.button {
+  position: relative;
+  left: 75%;
+  font-size: 170%;
+  width: 70px;
+  height: 70px;
+  background-color: #3c2a21;
+  color: white;
+  border: 0;
+  margin: 0;
+}
+.bleft {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.bright {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

@@ -1,0 +1,20 @@
+.headerMain {
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: row;
+  height: 250px;
+}
+.logoDiv {
+  margin-left: 2%;
+}
+.heading {
+  margin-top: 80px;
+  margin-left: 20px;
+  font-family: "Times New Roman";
+  font-size: 35px;
+  color: #3c2a21;
+}
+.logo {
+  margin-top: 30px;
+  height: 180px;
+}
