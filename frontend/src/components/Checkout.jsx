@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Checkout.css";
 import axios from "axios";
 
@@ -29,7 +29,7 @@ function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
       currency: "INR",
       name: "TVF",
       description: "description",
-      image: "https://avatars.githubusercontent.com/u/25058652?v=4",
+      image: "../../assets/logo.png",
       order_id: order.id,
       callback_url: "http://localhost:3000/api/v1/paymentverification",
       prefill: {
