@@ -5,8 +5,7 @@ import Header from "./components/header.jsx";
 import { useState, useEffect } from "react";
 import { getFoodsData } from "./api/foodoptions";
 function App() {
-  // git is good
-
+  const [isLoading, setIsLoading] = useState(1);
   const [isCheck, setIsCheck] = useState(0);
   const [countArr, setCountArr] = useState([
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -14,21 +13,28 @@ function App() {
 
   const [amount, setAmount] = useState(0);
   const [foodsArr, setfoodsArr] = useState([]);
+
   useEffect(() => {
     getFoodsData().then((data) => setfoodsArr(data));
+    setIsLoading(0);
   }, []);
+
   if (isCheck) {
-    return (
-      <div>
-        <Header />
-        <Checkout
-          setIsCheck={setIsCheck}
-          foodsArr={foodsArr}
-          countArr={countArr}
-          totalCost={amount}
-        />
-      </div>
-    );
+    if (isLoading) {
+      return <p>Page Loading...</p>;
+    } else {
+      return (
+        <div>
+          <Header />
+          <Checkout
+            setIsCheck={setIsCheck}
+            foodsArr={foodsArr}
+            countArr={countArr}
+            totalCost={amount}
+          />
+        </div>
+      );
+    }
   } else {
     return (
       <div>
