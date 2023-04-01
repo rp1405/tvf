@@ -1,10 +1,10 @@
-// const instance = require("../razorpayins.js");
+require("dotenv").config();
 const Razorpay = require("razorpay");
 const Order = require("../models/order");
 
 var instance = new Razorpay({
-  key_id: "rzp_test_AM28Y3V37lYCr0",
-  key_secret: "TQRmhkANDOLNGnTsv7p9rQvY",
+  key_id: process.env.RAZORPAY_API_KEY,
+  key_secret: process.env.RAZORPAY_API_SECRET,
 });
 
 const crypto = require("crypto");
@@ -43,7 +43,7 @@ const paymentVerification = async (req, res) => {
   const body = razorpay_order_id + "|" + razorpay_payment_id;
 
   const expectedSignature = crypto
-    .createHmac("sha256", "TQRmhkANDOLNGnTsv7p9rQvY")
+    .createHmac("sha256", process.env.RAZORPAY_API_SECRET)
     .update(body.toString())
     .digest("hex");
 

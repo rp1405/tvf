@@ -5,11 +5,10 @@ import axios from "axios";
 function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
   console.log(totalCost);
   const checkoutHandler = async () => {
-    // const {
-    //   data: { key },
-    // } = await axios.get("http://localhost:3000/api/v1/getkey");
+    const {
+      data: { key },
+    } = await axios.get("http://localhost:3000/api/v1/getkey");
 
-    const key = "rzp_test_AM28Y3V37lYCr0";
     const items = {};
     foodsArr.forEach((obj, ind) => {
       if (countArr[ind] > 0) {
