@@ -5,21 +5,19 @@
   background-color: #dbcbbd;
   height: 250px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border-radius: 30px;
 }
-.detail-div {
-  padding-left: 3%;
-  padding-right: 3%;
+.buttonAndPrice {
   display: flex;
-  flex-direction: row;
-  /* justify-content: space-between; */
+  flex-direction: column;
+  width: 40%;
 }
 .name {
   font-size: 160%;
   color: #3c2a21;
   margin-left: 4%;
-  width: 30%;
+  width: 50%;
   padding-top: 30px;
   /* position: relative; */
   /* right: 20%; */
@@ -29,21 +27,24 @@
   color: #3c2a21;
   padding-top: 30px;
   margin-left: 40%;
+  align-items: center;
 }
 .image {
   border-radius: 5px;
 }
 .vegNonVeg {
   margin-top: 3%;
+  margin-left: 10px;
   width: 8%;
 }
 .button-div {
-  padding: 2%;
+  align-items: center;
   font-size: 150%;
+  margin-top: 50px;
 }
 .button {
   position: relative;
-  left: 75%;
+  left: 30%;
   font-size: 170%;
   width: 70px;
   height: 70px;

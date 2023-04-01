@@ -38,25 +38,25 @@ export default function Tray({
   return (
     <div className="supermaindiv">
       <div className="maindiv">
-        <div className="detail-div">
-          <div className="vegNonVeg">
-            <img className="image" src={vegNonveg}></img>
-          </div>
-          <div className="name">
-            <h1>{name}</h1>
-          </div>
+        <div className="vegNonVeg">
+          <img className="image" src={vegNonveg}></img>
+        </div>
+        <div className="name">
+          <h1>{name}</h1>
+        </div>
+        <div className="buttonAndPrice">
           <div className="price">
             <h1>₹ {price}</h1>
           </div>
-        </div>
-        <div className="button-div">
-          <button className="button bleft" onClick={decrementCount}>
-            -
-          </button>
-          <button className="button">{count}</button>
-          <button className="button bright" onClick={incrementCount}>
-            +
-          </button>
+          <div className="button-div">
+            <button className="button bleft" onClick={decrementCount}>
+              -
+            </button>
+            <button className="button">{count}</button>
+            <button className="button bright" onClick={incrementCount}>
+              +
+            </button>
+          </div>
         </div>
       </div>
     </div>
