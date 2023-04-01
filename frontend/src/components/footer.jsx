@@ -3,6 +3,10 @@ import "./footer.css";
 import { useState } from "react";
 export default function Footer({ amount, setIsCheck }) {
   function onClick() {
+    if (amount == 0) {
+      alert("Please select some items");
+      return;
+    }
     setIsCheck(1);
   }
   return (

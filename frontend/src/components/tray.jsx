@@ -1,38 +1,40 @@
 import React from "react";
 import "./tray.css";
 import { useState } from "react";
-export default function Tray({ name, price, veg, setAmount, setCart }) {
-  const [count, setCount] = useState(0);
+export default function Tray({
+  name,
+  price,
+  setAmount,
+  ind,
+  countArr,
+  setCountArr,
+}) {
+  const [count, setCount] = useState(countArr[ind]);
   var vegNonveg = "";
+  var veg = 1;
   if (veg) {
     vegNonveg = "../../assets/veg-icon.svg";
   } else {
     vegNonveg = "../../assets/non-veg-icon.svg";
   }
-  function press(btn) {
-    if (btn === "minus") {
-      if (count > 0) {
-        setCount(count - 1);
-        setAmount((pre) => pre - price);
-        setCart((prevItems) => {
-          if (count == 1) {
-            delete prevItems[name];
-            return { ...prevItems };
-          } else {
-            prevItems[name] = count - 1;
-            return { ...prevItems };
-          }
-        });
-      }
-    } else {
-      setCount(count + 1);
-      setAmount((pre) => pre + price);
-      setCart((prevItems) => {
-        prevItems[name] = count + 1;
-        return { ...prevItems };
+  const incrementCount = () => {
+    setCount(count + 1);
+    setCountArr((pre) => {
+      pre[ind] = count + 1;
+      return { ...pre };
+    });
+    setAmount((pre) => pre + price);
+  };
+  const decrementCount = () => {
+    if (count > 0) {
+      setCount(count - 1);
+      setCountArr((pre) => {
+        pre[ind] = count - 1;
+        return { ...pre };
       });
+      setAmount((pre) => pre - price);
     }
-  }
+  };
   return (
     <div className="supermaindiv">
       <div className="maindiv">
@@ -48,11 +50,11 @@ export default function Tray({ name, price, veg, setAmount, setCart }) {
           </div>
         </div>
         <div className="button-div">
-          <button className="button bleft" onClick={() => press("minus")}>
+          <button className="button bleft" onClick={decrementCount}>
             -
           </button>
           <button className="button">{count}</button>
-          <button className="button bright" onClick={() => press("plus")}>
+          <button className="button bright" onClick={incrementCount}>
             +
           </button>
         </div>

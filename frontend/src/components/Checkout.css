@@ -12,15 +12,19 @@
   border-radius: 50px;
   width: 80%;
   margin-top: 200px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .summary {
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 hr {
-  margin-top: 10px;
-  width: 70%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 90%;
 }
 .back-button {
   position: absolute;
@@ -34,4 +38,38 @@ hr {
   background-size: cover;
   background-color: antiquewhite;
   border-radius: 100px;
+}
+.listItem {
+  display: flex;
+  flex-direction: row;
+}
+.itemName {
+  width: 40%;
+  margin-left: 10%;
+}
+.itemCount {
+  width: 10%;
+  margin-left: 10%;
+}
+.itemPrice {
+  margin-left: 10%;
+}
+.subTotal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.payNow {
+  margin-top: 10px;
+  width: 80%;
+  height: 120px;
+  border-radius: 50px;
+  font-family: "Dosis";
+  font-size: 70px;
+  font-weight: bolder;
+  background-color: #5c3d2e;
+  color: ivory;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #182747;
 }
