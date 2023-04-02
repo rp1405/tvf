@@ -18,7 +18,7 @@ function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
     setIsLoading(1);
     const {
       data: { key },
-    } = await axios.get(`${BASE_URL}/api/v1/getkey`);
+    } = await axios.get(`${BASE_URL}/api/v1/getkey`); // any can acces this
 
     const items = {};
     foodsArr.forEach((obj, ind) => {
