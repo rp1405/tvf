@@ -14,7 +14,7 @@ function App() {
     return (
       <div className="loader">
         <img className="loadingImage" src="../../assets/truckGif.gif"></img>
-        <div class="loader-line"></div>
+        <div className="loader-line"></div>
       </div>
     );
   }
@@ -28,7 +28,7 @@ function App() {
     });
     const timer = setTimeout(() => {
       setIsLoading(0);
-    }, 1500);
+    }, 800);
   }, []);
   if (isCheck) {
     if (isLoading) {
