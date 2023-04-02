@@ -18,15 +18,18 @@ function App() {
       </div>
     );
   }
+
+  const [countArr, setCountArr] = useState(null);
+
   useEffect(() => {
-    getFoodsData().then((data) => setfoodsArr(data));
+    getFoodsData().then((data) => {
+      setfoodsArr(data);
+      setCountArr(Array(data.length).fill(0));
+    });
     const timer = setTimeout(() => {
       setIsLoading(0);
-    }, 3000);
+    }, 1500);
   }, []);
-  const len = foodsArr.length;
-  const [countArr, setCountArr] = useState(Array(200).fill(0)); //Hardcoded array size
-  console.log(countArr);
   if (isCheck) {
     if (isLoading) {
       return <Loader />;
