@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./Checkout.css";
 import axios from "axios";
 import { BASE_URL } from "../config";
+import Header from "./header.jsx";
+
 function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
   console.log(totalCost);
   const [isLoading, setIsLoading] = useState(0);
@@ -81,37 +83,40 @@ function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
     return <Loader />;
   } else {
     return (
-      <div className="summOutDiv">
-        <div>
-          <button className="back-button" onClick={() => onClick()}></button>
-        </div>
-        <div className="summaryDiv">
-          <div className="summary">
-            <h1>Order Summary</h1>
-          </div>
+      <>
+        <Header />
+        <div className="summOutDiv">
           <div>
-            {foodsArr.map((item, ind) => {
-              if (countArr[ind] > 0) {
-                return (
-                  <ListItem
-                    key={item._id}
-                    itemName={foodsArr[ind].name}
-                    itemCount={countArr[ind]}
-                    itemPrice={foodsArr[ind].price}
-                  />
-                );
-              }
-            })}
+            <button className="back-button" onClick={() => onClick()}></button>
           </div>
-          <hr></hr>
-          <div className="subTotal">
-            <h1>Subtotal: ₹ {totalCost}</h1>
+          <div className="summaryDiv">
+            <div className="summary">
+              <h1>Order Summary</h1>
+            </div>
+            <div>
+              {foodsArr.map((item, ind) => {
+                if (countArr[ind] > 0) {
+                  return (
+                    <ListItem
+                      key={item._id}
+                      itemName={foodsArr[ind].name}
+                      itemCount={countArr[ind]}
+                      itemPrice={foodsArr[ind].price}
+                    />
+                  );
+                }
+              })}
+            </div>
+            <hr></hr>
+            <div className="subTotal">
+              <h1>Subtotal: ₹ {totalCost}</h1>
+            </div>
           </div>
+          <button className="payNow" onClick={checkoutHandler}>
+            Pay Now
+          </button>
         </div>
-        <button className="payNow" onClick={checkoutHandler}>
-          Pay Now
-        </button>
-      </div>
+      </>
     );
   }
 }

@@ -36,7 +36,6 @@ function App() {
     } else {
       return (
         <div>
-          <Header />
           <Checkout
             setIsCheck={setIsCheck}
             foodsArr={foodsArr}
