@@ -8,9 +8,7 @@ const app = express();
 app.use(cors());
 
 const connectDB = require("./db/connect");
-const categoryRouter = require("./routes/category");
 const foodRouter = require("./routes/food");
-const orderRouter = require("./routes/order");
 
 const notFoundMiddleware = require("./middleware/not-found");
 const errorMiddleware = require("./middleware/error-handler");
@@ -24,9 +22,8 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/api/v1/getkey", (req, res) =>
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY })
 );
-app.use("/api/v1/category", categoryRouter);
+
 app.use("/api/v1/food", foodRouter);
-app.use("/api/v1/order", orderRouter);
 app.use("/api/v1", paymentRoute);
 
 app.use(notFoundMiddleware);
