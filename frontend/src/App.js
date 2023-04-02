@@ -7,9 +7,6 @@ import { getFoodsData } from "./api/foodoptions";
 function App() {
   const [isLoading, setIsLoading] = useState(1);
   const [isCheck, setIsCheck] = useState(0);
-  const [countArr, setCountArr] = useState([
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-  ]);
 
   const [amount, setAmount] = useState(0);
   const [foodsArr, setfoodsArr] = useState([]);
@@ -27,7 +24,9 @@ function App() {
       setIsLoading(0);
     }, 3000);
   }, []);
-
+  const len = foodsArr.length;
+  const [countArr, setCountArr] = useState(Array(200).fill(0)); //Hardcoded array size
+  console.log(countArr);
   if (isCheck) {
     if (isLoading) {
       return <Loader />;
