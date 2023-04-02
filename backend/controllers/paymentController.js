@@ -1,6 +1,7 @@
 require("dotenv").config();
 const Razorpay = require("razorpay");
 const Order = require("../models/order");
+const VerifiedOrder = require("../models/verifiedOrder");
 
 var instance = new Razorpay({
   key_id: process.env.RAZORPAY_API_KEY,
@@ -59,6 +60,14 @@ const paymentVerification = async (req, res) => {
     });
 
     const task = await Order.findOne({ razorpay_order_id: razorpay_order_id });
+    const { status, amount, items, cust_order_id } = task;
+    await VerifiedOrder.create({
+      status,
+      razorpay_order_id,
+      amount,
+      items,
+      cust_order_id,
+    });
     res.status(200).send(`<html>
     <head>
       <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
