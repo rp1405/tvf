@@ -1,8 +1,8 @@
 import axios from "axios";
-
+import { BASE_URL } from "../config";
 export const getFoodsData = async () => {
   try {
-    const { data } = await axios.get(`http://localhost:3000/api/v1/food/true`);
+    const { data } = await axios.get(`${BASE_URL}/api/v1/food/true`);
 
     // console.log(data["output"]);
     return data["output"];
@@ -13,10 +13,7 @@ export const getFoodsData = async () => {
 
 export const createFoodsOrder = async (obj) => {
   try {
-    const { data } = await axios.post(
-      `http://localhost:3000/api/v1/order`,
-      obj
-    );
+    const { data } = await axios.post(`${BASE_URL}/api/v1/order`, obj);
 
     console.log(data["task"]._id);
     return data["task"]._id;

@@ -1,13 +1,13 @@
 import React from "react";
 import "./Checkout.css";
 import axios from "axios";
-
+import { BASE_URL } from "../config";
 function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
   console.log(totalCost);
   const checkoutHandler = async () => {
     const {
       data: { key },
-    } = await axios.get("http://localhost:3000/api/v1/getkey");
+    } = await axios.get(`${BASE_URL}/api/v1/getkey`);
 
     const items = {};
     foodsArr.forEach((obj, ind) => {
@@ -18,7 +18,7 @@ function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
     const amount = totalCost;
     const {
       data: { order },
-    } = await axios.post("http://localhost:3000/api/v1/checkout", {
+    } = await axios.post(`${BASE_URL}/api/v1/checkout`, {
       amount,
       items,
     });
@@ -31,7 +31,7 @@ function Checkout({ setIsCheck, foodsArr, countArr, totalCost }) {
       description: "description",
       image: "../../assets/logo.png",
       order_id: order.id,
-      callback_url: "http://localhost:3000/api/v1/paymentverification",
+      callback_url: `${BASE_URL}/api/v1/paymentverification`,
       prefill: {
         name: "Gaurav Kumar",
         email: "gaurav.kumar@example.com",
