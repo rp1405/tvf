@@ -13,15 +13,24 @@ function App() {
 
   const [amount, setAmount] = useState(0);
   const [foodsArr, setfoodsArr] = useState([]);
-
+  function Loader() {
+    return (
+      <div className="loader">
+        <img className="loadingImage" src="../../assets/truckGif.gif"></img>
+        <div class="loader-line"></div>
+      </div>
+    );
+  }
   useEffect(() => {
     getFoodsData().then((data) => setfoodsArr(data));
-    setIsLoading(0);
+    const timer = setTimeout(() => {
+      setIsLoading(0);
+    }, 3000);
   }, []);
 
   if (isCheck) {
     if (isLoading) {
-      return <p>Page Loading...</p>;
+      return <Loader />;
     } else {
       return (
         <div>
@@ -36,19 +45,23 @@ function App() {
       );
     }
   } else {
-    return (
-      <div>
-        <Header />
-        <Menu
-          setIsCheck={setIsCheck}
-          countArr={countArr}
-          setCountArr={setCountArr}
-          foodsArr={foodsArr}
-          amount={amount}
-          setAmount={setAmount}
-        />
-      </div>
-    );
+    if (isLoading) {
+      return <Loader />;
+    } else {
+      return (
+        <div>
+          <Header />
+          <Menu
+            setIsCheck={setIsCheck}
+            countArr={countArr}
+            setCountArr={setCountArr}
+            foodsArr={foodsArr}
+            amount={amount}
+            setAmount={setAmount}
+          />
+        </div>
+      );
+    }
   }
 }
 
