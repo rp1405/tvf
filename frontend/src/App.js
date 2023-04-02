@@ -25,10 +25,8 @@ function App() {
     getFoodsData().then((data) => {
       setfoodsArr(data);
       setCountArr(Array(data.length).fill(0));
-    });
-    const timer = setTimeout(() => {
       setIsLoading(0);
-    }, 800);
+    });
   }, []);
   if (isCheck) {
     if (isLoading) {
