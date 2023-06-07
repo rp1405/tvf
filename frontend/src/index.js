@@ -5,11 +5,25 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const isMobile = window.matchMedia("(max-width: 800px)").matches;
+if (isMobile) {
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+} else {
+  root.render(
+    <React.StrictMode>
+      <div>
+        <h1 style={{ color: "coral" }}>
+          Sorry :(
+          <br /> the website is only available on mobiles
+        </h1>
+      </div>
+    </React.StrictMode>
+  );
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

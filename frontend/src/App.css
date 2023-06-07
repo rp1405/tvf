@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap");
 body {
   background-color: antiquewhite;
 }
 .loader {
+  font-family: "Dosis";
   display: flex;
   align-items: center;
   flex-direction: column;
